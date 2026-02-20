@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="San Marcos Buena Vista - Lotes residenciales premium en un entorno natural y seguro." />
+<title>San Marcos Buena Vista | Lotes Residenciales</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Google Fonts Premium -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<style>
+:root {
+    --ochre: #C4A35A;
+    --beige: #F5F1E8;
+    --soft-white: #FDFCFA;
+    --olive: #6B7B5E;
+    --dark: #2D2D2D;
+    --gold: #c6a45b;   
+    --dark: #2d2d2d;
+    --light: #f8f6f1;
+    --text: #6b6b6b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+    transition: all 0.4s ease;
+}
+
+.navbar-brand {
+    color: var(--dark);
+}
+
+.navbar-brand i {
+    color: var(--olive);
+    font-size: 1.3rem;
+}
+
+.navbar-brand:hover {
+    color: var(--dark);
+}
+
+.navbar.scrolled {
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.btn-primary {
+    background-color: var(--ochre);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #b8934d;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    background: url('https://iili.io/q33Wbun.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero p {
+    max-width: 550px;
+    margin: 25px auto 0;
+    font-size: 1rem;
+}
+
+/* Overlay mucho más sutil */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.35)
+    );
+    z-index: 1;
+}
+
+/* Asegura que el contenido esté encima */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.icon-box i {
+    font-size: 2.2rem;
+    color: var(--olive);
+    transition: 0.3s;
+}
+
+.icon-box:hover i {
+    transform: scale(1.2);
+}
+
+.cta-section {
+    background-color: var(--beige);
+}
+
+.form-control {
+    border-radius: 50px;
+    padding: 12px 20px;
+}
+
+textarea.form-control {
+    border-radius: 20px;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Estilos para la nueva sección "Un Santuario Donde Florece la Vida" */
+.about-villa-real {
+  background-color: #fcfbf7;
+  color: #3c4a36;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-villa-real .highlight {
+  color: #6b7b5e;
+}
+
+.feature-box {
+  background: #f9f7f1;
+  cursor: default;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-weight: 600;
+  color: #3c4a36;
+}
+
+.feature-box:hover {
+  background: #e9e6d5;
+}
+
+.feature-icon {
+  font-size: 1.6rem;
+  color: #6b7b5e;
+  flex-shrink: 0;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.about-text {
+  flex: 1 1 380px;
+  min-width: 320px;
+}
+
+.about-text small {
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 520px;
+  padding-left: 2.5rem;
+  text-align: justify;
+}
+
+.about-images {
+  position: relative;
+  flex: 1 1 450px;
+  min-width: 320px;
+}
+
+.about-images img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.about-images .gold-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #C4A35A;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem 0 1rem 0;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(196, 163, 90, 0.6);
+  max-width: 120px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gold-box > div {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-villa-real {
+    padding: 2rem 1rem;
+  }
+  .about-text, .about-images {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+  }
+  .about-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 150px);
+  }
+}
+.gold-text {
+    color: var(--ochre);
+}
+
+.lots-section {
+    background-color: var(--beige);
+}
+
+.lot-card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+    transition: 0.4s ease;
+}
+
+.lot-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+}
+
+.lot-image {
+    position: relative;
+}
+
+.lot-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+}
+
+.available {
+    background: var(--olive);
+}
+
+.limited {
+    background: var(--ochre);
+}
+
+.size-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.lot-content {
+    padding: 25px;
+}
+
+.price {
+    font-weight: 500;
+}
+
+.price span {
+    color: var(--ochre);
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.lot-tags {
+    margin: 15px 0;
+}
+
+.lot-tags span {
+    display: inline-block;
+    background: var(--soft-white);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    margin: 5px 5px 0 0;
+}
+
+.btn-lot {
+    width: 100%;
+    background: #2d2d2d;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.btn-lot:hover {
+    background: var(--ochre);
+}
+
+.btn-outline-luxury {
+    border: 1px solid #2d2d2d;
+    background: transparent;
+    padding: 12px 35px;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.btn-outline-luxury:hover {
+    background: #2d2d2d;
+    color: white;
+}
+
+.beneficios-section {
+  padding: 120px 0;
+  background: var(--soft-white);
+  text-align: center;
+}
+
+.beneficios-eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ochre);
+}
+
+.beneficios-title {
+  font-size: 44px;
+  margin-top: 10px;
+  color: var(--dark);
+  font-weight: 700;   /* MÁS BOLD */
+}
+
+.beneficios-subtitle {
+  max-width: 650px;
+  margin: 25px auto 70px;
+  font-size: 17px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Centrar las últimas dos tarjetas */
+.beneficio-card:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+.beneficio-card:nth-child(6) {
+  grid-column: 3 / 4;
+}
+
+.beneficio-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.beneficio-card .icon {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--olive);
+  transition: 0.4s ease;
+}
+
+.beneficio-card:hover .icon {
+  color: var(--ochre);
+  transform: scale(1.15);
+}
+
+.beneficio-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+.beneficio-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.beneficio-testimonial {
+  margin-top: 100px;
+  padding: 70px 50px;
+  background: var(--olive);
+  border-radius: 30px;
+  color: white;
+}
+
+.quote-mark {
+  font-size: 70px;
+  opacity: 0.25;
+  margin-bottom: 20px;
+}
+
+.beneficio-testimonial p {
+  font-size: 22px;
+  line-height: 1.8;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+
+.testimonial-author {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* ===============================
+   UBICACIÓN PRIVILEGIADA
+================================= */
+
+.ubicacion-section {
+  padding: 120px 0;
+  background: var(--soft-white);
+}
+
+.ubicacion-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* MAPA */
+
+.mapa-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* CONTENIDO */
+
+.ubicacion-subtitle {
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: var(--ochre);
+  font-weight: 300;
+}
+
+.ubicacion-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 20px 0;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+.ubicacion-title span {
+  color: var(--ochre);
+}
+
+.ubicacion-texto {
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.ubicacion-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ubicacion-item {
+  background: var(--beige);
+  padding: 18px 22px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.ubicacion-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item-left i {
+  color: var(--olive);
+  font-size: 18px;
+}
+
+.ubicacion-item span {
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .ubicacion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-container {
+    height: 350px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================= */
+/* CTA FINAL */
+/* ============================= */
+
+.cta-final {
+    background: var(--light);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Badge Dorado */
+
+.cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ochre);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.cta-badge .dot {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.cta-title {
+    font-size: 52px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.cta-title span {
+    color: var(--gold);
+}
+
+.cta-text {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: var(--text);
+}
+
+/* ============================= */
+/* BOTONES CTA */
+/* ============================= */
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+.cta-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Botón Dorado */
+
+.btn-gold {
+    background-color: var(--gold) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.btn-gold:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Botón Blanco */
+
+.btn-white {
+    background-color: #ffffff !important;
+    color: var(--dark) !important;
+    border: 1px solid var(--dark);
+}
+
+.btn-white:hover {
+    background-color: var(--dark);
+    color: #ffffff !important;
+}
+
+/* botón outline consistente con tu diseño */
+.cta-buttons .btn-outline {
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    background: transparent;
+    
+}
+
+.cta-buttons .btn-outline:hover {
+    background: var(--dark);
+    color: #fff;
+}
+
+.cta-divider {
+    width: 80%;
+    max-width: 900px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 0 auto 40px;
+}
+
+.cta-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.cta-stats h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.cta-stats p {
+    font-size: 14px;
+    color: var(--text);
+}
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+    
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-tree-fill"></i>
+        San Marcos Buena Vista
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+
+        <!-- Menú centrado -->
+        <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lots">Lotes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lifestyle">Estilo de Vida</a></li>
+            <li class="nav-item"><a class="nav-link" href="#location">Ubicación</a></li>
+        </ul>
+
+        <!-- Botón derecha -->
+        <a href="#contact" class="btn btn-primary rounded-pill px-4 ms-lg-auto">
+            Agenda una Visita
+        </a>
+
+    </div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero d-flex align-items-center text-center">
+<div class="container" data-aos="fade-up">
+    <h1 class="display-4 fw-bold">
+    Construye la Casa de <span class="gold-text">Tus Sueños</span> en una Comunidad Natural y Segura
+</h1>
+    <p class="lead mt-3">Lotes residenciales disponibles en una zona tranquila y en crecimiento. Crea el hogar que siempre has imaginado, rodeado de naturaleza y seguridad.</p>
+    <div class="mt-4">
+        <a href="#lots" class="btn btn-primary btn-lg rounded-pill me-3 px-4">Ver Lotes Disponibles</a>
+        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4">Solicitar Información</a>
+    </div>
+</div>
+</section>
+
+<!-- Sección "Un Santuario Donde Florece la Vida" reemplazada -->
+<section class="about-villa-real section-padding">
+  <div class="container d-flex flex-wrap align-items-center justify-content-between gap-5">
+    <!-- Texto -->
+    <div class="about-text" data-aos="fade-right">
+      <small class="text-uppercase text-muted fw-semibold">Sobre San Marcos Buena Vista</small>
+      <h2 class="fw-bold mb-4">Un Santuario Donde <span class="highlight">Florece la Vida</span></h2>
+      <p>San Marcos Buena Vista es más que una comunidad residencial - es una elección de estilo de vida. Ubicada entre hectáreas de bosque preservado, nuestra comunidad cerrada ofrece el equilibrio perfecto entre seguridad, naturaleza y comodidad moderna. Ya sea que busques construir tu hogar para siempre o hacer una inversión inteligente, San Marcos Buena Vista proporciona una base excepcional para tu futuro.
+      </p>
+
+      <div class="features">
+        <div class="feature-box">
+          <i class="bi bi-shield-lock-fill feature-icon"></i>
+          Entrada con seguridad 24/7
+        </div>
+        <div class="feature-box">
+          <i class="bi bi-tree-fill feature-icon"></i>
+          Rodeado de bosque natural
+        </div>
+        <div class="feature-box">
+          <i class="bi bi-house-door-fill feature-icon"></i>
+          Construye tu hogar a medida
+        </div>
+        <div class="feature-box">
+          <i class="bi bi-graph-up-arrow feature-icon"></i>
+          Inversión de alta plusvalía
+        </div>
+      </div>
+    </div>
+
+    <!-- Imágenes -->
+    <div class="about-images" data-aos="fade-left">
+  <img src="https://iili.io/q33SHbV.jpg" 
+       alt="Paisaje natural San Marcos Buena Vista">
+
+<div class="gold-box">
+  <div>25+</div>
+  <small>Años de Experiencia</small>
+</div>
+
+</div> <!-- cierre about-images -->
+</div> <!-- cierre container -->
+</section>
+
+<!-- Lots -->
+<section id="lots" class="section-padding lots-section">
+<div class="container">
+
+<div class="text-center mb-5">
+    <small class="text-uppercase fw-semibold" style="color: var(--olive); letter-spacing: 2px;">
+        Propiedades Disponibles
+    </small>
+    <h2 class="fw-bold mt-2">Encuentra tu Lote Perfecto</h2>
+    <p class="text-muted">
+        Elige entre una variedad de lotes, cada uno ofreciendo características únicas
+        y el lienzo perfecto para la casa de tus sueños.
+    </p>
+</div>
+
+<div class="row g-4">
+
+<!-- LOTE 1 -->
+<div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+<div class="lot-card">
+
+<div class="lot-image">
+    <img src="https://iili.io/q33Zabn.jpg">
+    <span class="status-badge available">Disponible</span>
+    <span class="size-badge">300 m²</span>
+</div>
+
+<div class="lot-content">
+    <p class="price">Desde <span>$35,000</span></p>
+    <p class="description">
+        Lote ejecutivo con vistas al bosque, perfecto para casas personalizadas.
+    </p>
+
+    <div class="lot-tags">
+        <span>Vista al bosque</span>
+        <span>Doble frente</span>
+        <span>Privado</span>
+    </div>
+
+</div>
+</div>
+</div>
+
+<!-- LOTE 2 -->
+<div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+<div class="lot-card">
+
+<div class="lot-image">
+    <img src="https://iili.io/q33Zabn.jpg">
+    <span class="status-badge limited">Limitado</span>
+    <span class="size-badge">450 m²</span>
+</div>
+
+<div class="lot-content">
+    <p class="price">Desde <span>$55,000</span></p>
+    <p class="description">
+        Lote premium espacioso ideal para casas grandes con espacio para jardín.
+    </p>
+
+    <div class="lot-tags">
+        <span>Vista premium</span>
+        <span>Extra ancho</span>
+        <span>Sin salida</span>
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<!-- LOTE 3 -->
+<div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+<div class="lot-card">
+
+<div class="lot-image">
+    <img src="https://iili.io/q33Zabn.jpg">
+    <span class="status-badge available">Disponible</span>
+    <span class="size-badge">600 m²</span>
+</div>
+
+<div class="lot-content">
+    <p class="price">Desde <span>$65,000</span></p>
+    <p class="description">
+        Lote ejecutivo con vistas al bosque, perfecto para casas personalizadas.
+    </p>
+
+    <div class="lot-tags">
+        <span>Vista al bosque</span>
+        <span>Doble frente</span>
+        <span>Privado</span>
+    </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- Lifestyle -->
+<section id="lifestyle" class="beneficios-section">
+  <div class="container">
+
+    <span class="beneficios-eyebrow">EL ESTILO DE VIDA SAN MARCOS BUENA VISTA</span>
+    <h2 class="beneficios-title">Beneficios que Importan</h2>
+    <p class="beneficios-subtitle">
+      Experimenta un estilo de vida diseñado para quienes aprecian la seguridad,
+      la naturaleza y la libertad de construir su visión.
+    </p>
+
+    <div class="beneficios-grid">
+
+      <div class="beneficio-card" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-tree-fill"></i></div>
+        <h3>Ambiente Natural</h3>
+        <p>Rodeado de bosques preservados y espacios verdes, disfruta de aire fresco y tranquilidad cada día.</p>
+      </div>
+
+      <div class="beneficio-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon"><i class="bi-shield-lock-fill"></i></div>
+        <h3>Acceso Controlado</h3>
+        <p>Seguridad 24/7 con puertas de entrada controladas garantizando tranquilidad para tu familia.</p>
+      </div>
+
+      <div class="beneficio-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="icon"><i class="bi-graph-up-arrow"></i></div>
+        <h3>Alta Plusvalía</h3>
+        <p>Ubicación estratégica con crecimiento comprobado del valor de la propiedad.</p>
+      </div>
+
+      <div class="beneficio-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="icon"><i class="bi-house-heart-fill"></i></div>
+        <h3>Construye a tu Ritmo</h3>
+        <p>Sin plazos de construcción. Diseña y construye la casa de tus sueños en tu propio tiempo.</p>
+      </div>
+
+      <div class="beneficio-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="icon"><i class="bi-sign-turn-right-fill"></i></div>
+        <h3>Fácil Acceso</h3>
+        <p>A minutos de las principales carreteras manteniendo una atmósfera tranquila y apartada.</p>
+      </div>
+
+      <div class="beneficio-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="icon"><i class="bi-people-fill"></i></div>
+        <h3>Comunidad en Crecimiento</h3>
+        <p>Únete a una comunidad vibrante de familias que comparten tus valores y visión de vida.</p>
+      </div>
+
+    </div>
+
+    <div class="beneficio-testimonial" data-aos="fade-up">
+      <div class="quote-mark">“</div>
+      <p>
+        San Marcos Buena Vista nos dio la libertad de diseñar nuestro hogar perfecto
+        en una comunidad que verdaderamente se siente como un santuario.
+        La mejor decisión que hemos tomado.
+      </p>
+      <span class="testimonial-author">
+        Familia Rodríguez — Propietarios desde 2025
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Location -->
+<!-- Location -->
+<section id="location" class="ubicacion-section">
+  <div class="container ubicacion-grid">
+
+    <!-- MAPA GOOGLE -->
+    <div class="mapa-container" data-aos="fade-right">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15505.672124550214!2d-89.2752258!3d13.6931131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62b9d4f305c6a9%3A0x8606d7877d94011!2sLotificaci%C3%B3n%20San%20Marcos%20Buenavista!5e0!3m2!1ses-419!2ssv!4v1771565330235!5m2!1ses-419!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="ubicacion-contenido" data-aos="fade-left">
+      <span class="ubicacion-subtitle">UBICACIÓN</span>
+
+      <h2 class="ubicacion-title">
+        Conectado pero <span>Tranquilamente</span> Apartado
+      </h2>
+
+      <p class="ubicacion-texto">
+        San Marcos Buena Vista ofrece lo mejor de ambos mundos —
+        un entorno natural sereno con acceso conveniente
+        a todo lo que necesitas.
+      </p>
+
+      <div class="ubicacion-lista">
+
+        <div class="ubicacion-item">
+          <div class="item-left">
+            <i class="bi bi-flower3"></i>
+            <div>
+              <strong>Ruta de las Flores</strong>
+              <p>Pintoresco recorrido de aproximadamente 44 km</p>
+            </div>
+          </div>
+          <span>19 min</span>
+        </div>
+
+        <div class="ubicacion-item">
+          <div class="item-left">
+            <i class="bi bi-bag-fill"></i>
+            <div>
+              <strong>Compras</strong>
+              <p>Centros comerciales</p>
+            </div>
+          </div>
+          <span>10 min</span>
+        </div>
+
+        <div class="ubicacion-item">
+          <div class="item-left">
+            <i class="bi bi-sign-turn-right-fill"></i>
+            <div>
+              <strong>Autopista</strong>
+              <p>Acceso rápido</p>
+            </div>
+          </div>
+          <span>3 min</span>
+        </div>
+
+        <div class="ubicacion-item">
+          <div class="item-left">
+            <i class="bi bi-hospital-fill"></i>
+            <div>
+              <strong>Hospital</strong>
+              <p>Atención 24/7 cercana</p>
+            </div>
+          </div>
+          <span>8 min</span>
+        </div>
+
+        <div class="ubicacion-item">
+          <div class="item-left">
+            <i class="bi bi-cup-hot-fill"></i>
+            <div>
+              <strong>Centro</strong>
+              <p>Restaurantes y cafés</p>
+            </div>
+          </div>
+          <span>15 min</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<!-- CTA -->
+<section class="cta-final">
+
+  <div class="container">
+
+    <div data-aos="fade-up">
+      <div class="cta-badge">
+        <span class="dot"></span>
+        Lotes limitados disponibles
+      </div>
+    </div>
+
+    <h2 class="cta-title" data-aos="fade-up" data-aos-delay="100">
+      Asegura tu Lote <br>
+      <span>Hoy Mismo</span>
+    </h2>
+
+    <p class="cta-text" data-aos="fade-up" data-aos-delay="200">
+      No pierdas la oportunidad de ser dueño de un pedazo de esta comunidad exclusiva.
+      Contacta a nuestro equipo de ventas hoy y da el primer paso hacia la casa de tus sueños.
+    </p>
+
+    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+
+      <a href="#contact" class="btn-gold">
+        Contacta a Ventas
+      </a>
+
+      <a href="#contact" class="btn-white">
+        Agenda una Visita
+      </a>
+
+    </div>
+
+    <div class="cta-divider" data-aos="fade-up" data-aos-delay="400"></div>
+
+    <div class="cta-stats" data-aos="fade-up" data-aos-delay="500">
+      <div>
+        <h3>100+</h3>
+        <p>Familias Felices</p>
+      </div>
+
+      <div>
+        <h3>99.9%</h3>
+        <p>Tasa de Satisfacción</p>
+      </div>
+
+      <div>
+        <h3>25 Años</h3>
+        <p>De Excelencia</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section-padding" style="background: var(--soft-white);">
+<div class="container">
+<div class="row align-items-center g-5">
+
+<!-- LADO IZQUIERDO -->
+<div class="col-lg-6" data-aos="fade-right">
+
+<small class="text-uppercase fw-semibold" style="letter-spacing:2px; color: var(--gold);">
+Ponte en Contacto
+</small>
+
+<h2 class="fw-bold mt-3" style="font-size:48px;">
+Comencemos tu <br>
+<span style="color: var(--ochre);">Camino a Casa</span>
+</h2>
+
+<div class="row g-3 mt-4">
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="p-3 rounded-4" style="background: var(--beige);">
+<i class="bi bi-telephone-fill me-2" style="color: var(--olive);"></i>
+<strong>Teléfono</strong>
+<p class="mb-0 small">+503 1234 5678</p>
+</div>
+</div>
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="p-3 rounded-4" style="background: var(--beige);">
+<i class="bi bi-envelope-fill me-2" style="color: var(--olive);"></i>
+<strong>Email</strong>
+<p class="mb-0 small">ventas@sanmarcosbv.com</p>
+</div>
+</div>
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="p-3 rounded-4" style="background: var(--beige);">
+<i class="bi bi-geo-alt-fill me-2" style="color: var(--olive);"></i>
+<strong>Ubicación</strong>
+<p class="mb-0 small">San Marcos Buena Vista</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- LADO DERECHO FORMULARIO -->
+<div class="col-lg-6" data-aos="fade-left">
+
+<div class="p-5 rounded-4 shadow" style="background:white;">
+
+<h4 class="fw-bold mb-2">Solicita Información</h4>
+<p class="small mb-4" style="color: var(--text);">
+Completa el formulario y te responderemos en menos de 24 horas.
+</p>
+
+<form>
+
+<div class="mb-3">
+<label class="small fw-semibold">Nombre Completo</label>
+<input type="text" class="form-control" placeholder="Tu nombre">
+</div>
+
+<div class="row">
+<div class="col-md-6 mb-3">
+<label class="small fw-semibold">Teléfono</label>
+<input type="tel" class="form-control" placeholder="Tu teléfono">
+</div>
+
+<div class="col-md-6 mb-3">
+<label class="small fw-semibold">Email</label>
+<input type="email" class="form-control" placeholder="Tu email">
+</div>
+</div>
+
+<div class="mb-4">
+<label class="small fw-semibold">Mensaje</label>
+<textarea class="form-control" rows="4" placeholder="Cuéntanos sobre tu interés..."></textarea>
+</div>
+
+<button class="btn btn-primary w-100 rounded-pill py-3">
+<i class="bi bi-send-fill me-2"></i>
+Solicitar Información
+</button>
+
+</form>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="pt-5 pb-4" style="background:#1f1f1f;">
+<div class="container text-center">
+
+<h5 class="mb-3">San Marcos Buena Vista</h5>
+
+<p style="max-width:700px; margin:auto;">
+Construyendo comunidades donde las familias prosperan.
+La casa de tus sueños te espera en nuestra comunidad
+residencial segura y rodeada de naturaleza.
+</p>
+
+<div class="mt-4">
+<a href="https://www.facebook.com/sanmarcosbuenavista" 
+   target="_blank" 
+   class="me-3">
+   <i class="bi bi-facebook fs-5"></i>
+</a>
+
+<a href="https://www.instagram.com/sanmarcosbuenavista" 
+   target="_blank">
+   <i class="bi bi-instagram fs-5"></i>
+</a>
+</div>
+
+<p class="mt-4 small">© 2026 Todos los Derechos Reservados</p>
+
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration: 1000,
+    once: true
+});
+
+window.addEventListener("scroll", function() {
+    document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>
