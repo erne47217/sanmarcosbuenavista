@@ -776,9 +776,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text);
 }
 
-
-
-
+@media (max-width: 576px) {
+    .hero .mt-4.d-flex {
+        gap: 1rem !important; /* más separación en móviles */
+    }
+}
 
 
 </style>
@@ -822,13 +824,13 @@ h1, h2, h3, h4, h5, h6 {
 <section id="home" class="hero d-flex align-items-center text-center">
 <div class="container" data-aos="fade-up">
     <h1 class="display-4 fw-bold">
-    Construye la Casa de <span class="gold-text">Tus Sueños</span> en una Comunidad Natural y Segura
+    Construye la casa de <span class="gold-text">tus sueños</span> en una comunidad natural y segura
 </h1>
     <p class="lead mt-3">Lotes residenciales disponibles en una zona tranquila y en crecimiento. Crea el hogar que siempre has imaginado, rodeado de naturaleza y seguridad.</p>
-    <div class="mt-4">
-        <a href="#lots" class="btn btn-primary btn-lg rounded-pill me-3 px-4">Ver Lotes Disponibles</a>
-        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4">Solicitar Información</a>
-    </div>
+    <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+    <a href="#lots" class="btn btn-primary btn-lg rounded-pill px-4">Ver Lotes Disponibles</a>
+    <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-4">Solicitar Información</a>
+</div>
 </div>
 </section>
 
@@ -868,8 +870,8 @@ h1, h2, h3, h4, h5, h6 {
        alt="Paisaje natural San Marcos Buena Vista">
 
 <div class="gold-box">
-  <div>25+</div>
-  <small>Años de Experiencia</small>
+  <div>Km 13.5</div>
+  <small>Ruta de las Flores</small>
 </div>
 
 </div> <!-- cierre about-images -->
@@ -1032,9 +1034,9 @@ h1, h2, h3, h4, h5, h6 {
     <div class="beneficio-testimonial" data-aos="fade-up">
       <div class="quote-mark">“</div>
       <p>
-        San Marcos Buena Vista nos dio la libertad de diseñar nuestro hogar perfecto
-        en una comunidad que verdaderamente se siente como un santuario.
-        La mejor decisión que hemos tomado.
+        Gracias a San Marcos Buena Vista, pudimos crear nuestro hogar perfecto
+        en una comunidad que combina paz, seguridad y belleza. 
+        Sin duda, elegir este lugar fue nuestra mejor decisión.
       </p>
       <span class="testimonial-author">
         Familia Rodríguez — Propietarios desde 2025
@@ -1080,7 +1082,7 @@ h1, h2, h3, h4, h5, h6 {
             <i class="bi bi-flower3"></i>
             <div>
               <strong>Ruta de las Flores</strong>
-              <p>Pintoresco recorrido de aproximadamente 44 km</p>
+              <p>Juayúa, Nahuizalco, Apaneca y Concepción de Ataco</p>
             </div>
           </div>
           <span>19 min</span>
@@ -1091,10 +1093,10 @@ h1, h2, h3, h4, h5, h6 {
             <i class="bi bi-bag-fill"></i>
             <div>
               <strong>Compras</strong>
-              <p>Centros comerciales</p>
+              <p>Metrocentro Sonsonate</p>
             </div>
           </div>
-          <span>10 min</span>
+          <span>20 min</span>
         </div>
 
         <div class="ubicacion-item">
@@ -1102,10 +1104,10 @@ h1, h2, h3, h4, h5, h6 {
             <i class="bi bi-sign-turn-right-fill"></i>
             <div>
               <strong>Autopista</strong>
-              <p>Acceso rápido</p>
+              <p>Acceso rápido a Ruta de las Flores</p>
             </div>
           </div>
-          <span>3 min</span>
+          <span>2 min</span>
         </div>
 
         <div class="ubicacion-item">
@@ -1113,17 +1115,17 @@ h1, h2, h3, h4, h5, h6 {
             <i class="bi bi-hospital-fill"></i>
             <div>
               <strong>Hospital</strong>
-              <p>Atención 24/7 cercana</p>
+              <p>Hospital N. de Sonsonate con atención cercana 24/7</p>
             </div>
           </div>
-          <span>8 min</span>
+          <span>15 min</span>
         </div>
 
         <div class="ubicacion-item">
           <div class="item-left">
             <i class="bi bi-cup-hot-fill"></i>
             <div>
-              <strong>Centro</strong>
+              <strong>Centro de Sonsonate</strong>
               <p>Restaurantes y cafés</p>
             </div>
           </div>
@@ -1234,7 +1236,7 @@ Comencemos tu <br>
 <div class="p-3 rounded-4" style="background: var(--beige);">
 <i class="bi bi-geo-alt-fill me-2" style="color: var(--olive);"></i>
 <strong>Ubicación</strong>
-<p class="mb-0 small">San Marcos Buena Vista</p>
+<p class="mb-0 small">Ruta de las Flores KM 13.5, Nahuizalco</p>
 </div>
 </div>
 
